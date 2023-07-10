@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+  .mobile-image {
+    width: 200px;
+    height: 100px;
+    margin: 1px;
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  button {
+    background-color: aqua;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  #image {
+      width: 300px;
+    }
+    #counter-value {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #increase-btn, #decrease-btn {
+      padding: 10px;
+      font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <!-- -----Question 1----- -->
+    <!-- <a href="#" onclick="showAlert(); return false;">Click me!</a>
+      <script>
+    function showAlert() {
+      alert("You clicked the link!");
+    }
+  </script> -->
+
+    <!------ Question 2 -------->
+     <!-- <img src="./img/1.jpg" alt="Mobile 1" class="mobile-image" onclick="showAlert()">
+    <img src="./img/2.jpg" alt="Mobile 2" class="mobile-image" onclick="showAlert()">
+    <img src="./img/3.jfif" alt="Mobile 3" class="mobile-image" onclick="showAlert()">
+    <script>
+        function showAlert() {
+          alert("You clicked the image!");
+        }
+      </script> -->
+
+    <!------- Question 3 ------>
+    <!-- <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Grade</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>20</td>
+          <td>12th</td>
+          <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>19</td>
+          <td>11th</td>
+          <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function deleteRow(row) {
+      var i = row.parentNode.parentNode.rowIndex;
+      document.getElementById("studentTable").deleteRow(i);
+    }
+    </script> -->
+
+    <!-------- Question 4 ------->
+    <!-- <img id="image" src="./img/burger.jfif" alt="Original Image"
+    onmouseover="changeImage('hover.jpg')"
+    onmouseout="changeImage('original.jpg')">
+    <script>
+      function changeImage(source) {
+        var image = document.getElementById("image");
+        image.src = source;
+      }
+    </script> -->
+
+    <!-------- Question 5 -------->
+    <!-- <div id="counter-value">0</div>
+    <button id="increase-btn" onclick="updateCounter(1)">Increase</button>
+    <button id="decrease-btn" onclick="updateCounter(-1)">Decrease</button>
+    <script>
+      var counter = 0;
+  
+      function updateCounter(value) {
+        counter += value;
+        document.getElementById("counter-value").textContent = counter;
+      }
+    </script> -->
+
+
+</body>
+</html>

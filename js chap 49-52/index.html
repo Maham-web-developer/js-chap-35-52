@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item .details {
+            display: none;
+        }
+
+        table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .edit-form {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .edit-form input {
+      margin-bottom: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    button {
+      background-color: purple;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .hidden-form {
+      display: none;
+      margin-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <!------- Question 1 ------->
+    <!-- <form id="signup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+    
+        <input type="submit" value="Submit" onclick="displayFormData(); return false;">
+      </form>
+      <div id="display"></div>
+      <script>
+        function displayFormData() {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+    
+          var displayElement = document.getElementById("display");
+          displayElement.innerHTML = "<p><strong>Name:</strong> " + name + "</p>" +
+           "<p><strong>Email:</strong> " + email + "</p>" +
+           "<p><strong>Password:</strong> " + password + "</p>";
+        }
+      </script> -->
+
+    <!------- Question 2 -------->
+    <!-- <div class="item">
+        <h2>Item 1</h2>
+        <p>Some brief details about Item 1. <span class="details">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Animi iste provident impedit dolor est eius ea esse et explicabo voluptatibus.</span></p>
+        <button class="read-more-btn" onclick="toggleDetails(0)">Read more</button>
+    </div>
+
+    <div class="item">
+        <h2>Item 2</h2>
+        <p>Some brief details about Item 2. <span class="details">Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Possimus quia fuga alias modi est asperiores animi blanditiis optio, cum minima..</span></p>
+        <button class="read-more-btn" onclick="toggleDetails(1)">Read more</button>
+    </div>
+    <script>
+        function toggleDetails(itemIndex) {
+            var details = document.getElementsByClassName("details")[itemIndex];
+            var readMoreBtn = document.getElementsByClassName("read-more-btn")[itemIndex];
+
+            if (details.style.display === "none") {
+                details.style.display = "block";
+                readMoreBtn.textContent = "Read less";
+            } else {
+                details.style.display = "none";
+                readMoreBtn.textContent = "Read more";
+            }
+        }
+    </script> -->
+
+    <!---------- Question 3 -------->
+    <!-- <form id="studentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+    
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+    
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" required>
+    
+        <button type="button" onclick="addStudent()">Add Student</button>
+      </form>
+    
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        </table>
+
+        <script>
+            var studentData = [];   
+            function addStudent() {
+              var name = document.getElementById("name").value;
+              var age = document.getElementById("age").value;
+              var grade = document.getElementById("grade").value;
+        
+              var student = { name: name, age: age, grade: grade };
+              studentData.push(student);
+        
+              displayStudents();
+              resetForm();
+            } 
+            function deleteStudent(index) {
+              studentData.splice(index, 1);
+              displayStudents();
+            }
+            function editStudent(index) {
+              var student = studentData[index];
+              document.getElementById("edit-name").value = student.name;
+              document.getElementById("edit-age").value = student.age;
+              document.getElementById("edit-grade").value = student.grade;
+        
+              toggleHiddenForm();
+            }
+            function saveEdit(index) {
+              var student = studentData[index];
+              student.name = document.getElementById("edit-name").value;
+              student.age = document.getElementById("edit-age").value;
+              student.grade = document.getElementById("edit-grade").value;
+        
+              displayStudents();
+              toggleHiddenForm();
+            }
+            function displayStudents() {
+              var table = document.getElementById("studentTable");
+              table.innerHTML = ""; // Clear existing table content
+        
+              for (var i = 0; i < studentData.length; i++) {
+                var student = studentData[i];
+        
+                var row = table.insertRow();
+        
+                var nameCell = row.insertCell();
+                nameCell.textContent = student.name;
+        
+                var ageCell = row.insertCell();
+                ageCell.textContent = student.age;
+        
+                var gradeCell = row.insertCell();
+                gradeCell.textContent = student.grade;
+        
+                var actionsCell = row.insertCell();
+                actionsCell.innerHTML = "<button onclick='deleteStudent(" + i + ")'>Delete</button> " +
+                "<button onclick='editStudent(" + i + ")'>Edit</button>";
+              }
+            }
+            function toggleHiddenForm() {
+              var hiddenForm = document.getElementById("hiddenForm");
+              hiddenForm.classList.toggle("hidden-form");
+            }
+            function resetForm() {
+              document.getElementById("name").value = "";
+              document.getElementById("age").value = "";
+              document.getElementById("grade").value = "";
+            }
+          </script> -->
+</body>
+
+</html>
